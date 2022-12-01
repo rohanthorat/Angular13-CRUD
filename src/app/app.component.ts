@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { DialogComponent } from './dialog/dialog.component';
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,4 +12,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class AppComponent {
   title = 'Angular13Crud';
+
+  constructor(private dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(DialogComponent, {
+      width: '30%'
+    });
+  }
 }
