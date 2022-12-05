@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-
+  freshnessList = ['Brand New', 'Second Hand', 'Refurbished'];
 }
