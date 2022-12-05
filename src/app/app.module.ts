@@ -12,6 +12,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DialogComponent } from './dialog/dialog.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { DialogComponent } from './dialog/dialog.component';
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
