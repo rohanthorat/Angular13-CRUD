@@ -5,5 +5,4 @@ This project demonstrates CRUD operation in Angular 13 using Material Design.
   * Update and delete options are available
   * Mat table is used providing pagination, sorting and filter functionality
 
-https://github.com/rohanthorat/Angular13-CRUD/issues/1#issue-1483530635
-
+![Demo}https://user-images.githubusercontent.com/24980024/206351703-68935c43-16b4-47cd-a303-22fc65032e60.mov
