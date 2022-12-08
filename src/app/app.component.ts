@@ -16,7 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class AppComponent implements OnInit {
   title = 'Angular13Crud';
-  displayedColumns: string[] = ['productName', 'category', 'comment', 'price', 'date', 'freshness'];
+  displayedColumns: string[] = ['productName', 'category', 'comment', 'price', 'date', 'freshness', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
