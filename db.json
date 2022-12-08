@@ -1,6 +1,23 @@
 {
   "productList": [
-    
+    {
+      "productName": "Apple",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 10,
+      "comment": "Fresh apple",
+      "date": "2022-12-07T05:00:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "Banana",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 23,
+      "comment": "Not fresh",
+      "date": "2022-12-08T05:00:00.000Z",
+      "id": 2
+    }
   ],
   "comments": [
     {
