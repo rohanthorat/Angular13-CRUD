@@ -11,6 +11,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DialogComponent implements OnInit {
   freshnessList = ['Brand New', 'Second Hand', 'Refurbished'];
   productForm!: FormGroup;
+  actionBtn: string = 'Save';
 
   constructor(private formBuilder: FormBuilder,
     private api: ApiService,
@@ -28,25 +29,43 @@ export class DialogComponent implements OnInit {
     });
   
     if (this.editData) {
+      this.actionBtn = 'Update';
       this.addDataToProductForm();
     }
   }
 
   addProduct() {
-    if (this.productForm.valid) {
-      this.api.postProduct(this.productForm.value)
+    if (!this.editData) {
+      if (this.productForm.valid) {
+        this.api.postProduct(this.productForm.value)
+        .subscribe({
+          next: (res) => {
+            alert('Product added successfully');
+            this.productForm.reset();
+            this.dialogRef.close('Save');
+          },
+          error: () => {
+            alert('Error while adding the product');
+          }
+        });
+      }
+    } else {
+      this.updateProduct();
+    }
+  }
+
+  updateProduct() {
+    this.api.putProduct(this.productForm.value, this.editData.id)
       .subscribe({
-        next: (res) => {
-          alert('Product added successfully');
+        next:(res) => {
+          alert('Product updated successfully');
           this.productForm.reset();
-          this.dialogRef.close('Save');
+          this.dialogRef.close('update');
         },
-        error: () => {
-          alert('Error while adding the product');
+        error:(err) => {
+          alert('Error while updating the record');
         }
       });
-    }
-    console.log(this.productForm.value);
   }
 
   addDataToProductForm() {
