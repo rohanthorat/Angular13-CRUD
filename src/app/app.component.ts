@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
     this.dialog.open(DialogComponent, {
       width: '30%'
     }).afterClosed().subscribe(val => {
-      if (val === 'update') {
+      if (val === 'save') {
        this.getAllProducts();
       }
    });
@@ -76,7 +76,7 @@ export class AppComponent implements OnInit {
         }
       })
   }
-  
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
